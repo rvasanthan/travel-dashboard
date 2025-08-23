@@ -20,7 +20,7 @@ const travelData = {
   destinations: [
     {
       id: 'miami',
-      name: 'Miami Trip',
+      name: 'Miami',
       thumbnail: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop',
       weatherLocation: 'Miami,FL,US', // Format for Visual Crossing API
       contacts: [
@@ -45,10 +45,10 @@ const travelData = {
       ]
     },
     {
-      id: 'nyc',
-      name: 'New York Trip',
+      id: 'keywest',
+      name: 'Key West',
       thumbnail: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=300&h=200&fit=crop',
-      weatherLocation: 'New York,NY,US', // Format for Visual Crossing API
+      weatherLocation: 'Key West,FL,US', // Format for Visual Crossing API
       contacts: [
         { name: 'Hotel Front Desk', phone: '+1-212-555-0123', type: 'hotel' },
         { name: 'Yellow Cab Co.', phone: '+1-212-555-0456', type: 'transport' }
