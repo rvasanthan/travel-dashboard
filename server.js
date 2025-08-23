@@ -21,7 +21,7 @@ const travelData = {
     {
       id: 'miami',
       name: 'Miami',
-      thumbnail: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop',
+      thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755967744/Saimandir/travel-companion/miami.jpg',
       weatherLocation: 'Miami,FL,US', // Format for Visual Crossing API
       contacts: [
         { name: 'Hotel Concierge', phone: '+1-305-555-0123', type: 'hotel' },
