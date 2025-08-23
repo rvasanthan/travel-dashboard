@@ -1,0 +1,154 @@
+const travelData = {
+  "destinations": [
+    {
+      "id": "miami",
+      "name": "Miami Trip",
+      "thumbnail": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop",
+      "contacts": [
+        {
+          "name": "Hotel Concierge",
+          "phone": "+1-305-555-0123",
+          "type": "hotel",
+          "notes": "24/7 available, speaks Spanish"
+        },
+        {
+          "name": "Enterprise Car Rental",
+          "phone": "+1-305-555-0456",
+          "type": "car",
+          "notes": "Airport location, reservation #ABC123"
+        },
+        {
+          "name": "Local Tour Guide - Maria",
+          "phone": "+1-305-555-0789",
+          "type": "guide",
+          "notes": "Recommended by hotel, city tours"
+        }
+      ],
+      "addresses": [
+        {
+          "name": "Miami International Airport",
+          "address": "2100 NW 42nd Ave, Miami, FL 33126",
+          "type": "airport",
+          "mapLink": "https://maps.google.com/?q=Miami+International+Airport",
+          "notes": "Terminal 2, Gate D12"
+        },
+        {
+          "name": "The Setai Miami Beach",
+          "address": "2001 Collins Ave, Miami Beach, FL 33139",
+          "type": "hotel",
+          "mapLink": "https://maps.google.com/?q=2001+Collins+Ave+Miami+Beach+FL",
+          "distanceFromAirport": "8.5 miles (20 min drive)",
+          "checkIn": "3:00 PM",
+          "checkOut": "12:00 PM"
+        },
+        {
+          "name": "Enterprise Car Rental - Airport",
+          "address": "3900 NW 25th St, Miami, FL 33142",
+          "type": "car",
+          "mapLink": "https://maps.google.com/?q=Enterprise+Car+Rental+Miami+Airport",
+          "notes": "Reservation: ABC123456, Compact Car"
+        },
+        {
+          "name": "South Beach",
+          "address": "Ocean Dr, Miami Beach, FL 33139",
+          "type": "attraction",
+          "mapLink": "https://maps.google.com/?q=South+Beach+Miami",
+          "distanceFromHotel": "0.3 miles (5 min walk)"
+        }
+      ],
+      "weather": {
+        "location": "Miami, FL",
+        "current": "82°F",
+        "condition": "Sunny",
+        "forecast": "78-85°F",
+        "humidity": "65%",
+        "windSpeed": "12 mph"
+      },
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "activities": ["Arrive at MIA", "Check into hotel", "South Beach walk"]
+        },
+        {
+          "day": "Day 2",
+          "activities": ["City tour with Maria", "Art Deco District", "Dinner at Joe's Stone Crab"]
+        }
+      ]
+    },
+    {
+      "id": "nyc",
+      "name": "New York City",
+      "thumbnail": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=300&h=200&fit=crop",
+      "contacts": [
+        {
+          "name": "The Plaza Hotel Concierge",
+          "phone": "+1-212-555-0123",
+          "type": "hotel",
+          "notes": "Ask for James, Broadway show tickets"
+        },
+        {
+          "name": "Yellow Cab Company",
+          "phone": "+1-212-555-0456",
+          "type": "transport",
+          "notes": "24/7 service, app available"
+        },
+        {
+          "name": "NYC Tour Guide - David",
+          "phone": "+1-212-555-0789",
+          "type": "guide",
+          "notes": "Walking tours, food tours"
+        }
+      ],
+      "addresses": [
+        {
+          "name": "JFK International Airport",
+          "address": "Queens, NY 11430",
+          "type": "airport",
+          "mapLink": "https://maps.google.com/?q=JFK+Airport",
+          "notes": "Terminal 4, AirTrain to Manhattan"
+        },
+        {
+          "name": "The Plaza Hotel",
+          "address": "768 5th Ave, New York, NY 10019",
+          "type": "hotel",
+          "mapLink": "https://maps.google.com/?q=The+Plaza+Hotel+NYC",
+          "distanceFromAirport": "17 miles (45 min by taxi)",
+          "checkIn": "4:00 PM",
+          "checkOut": "12:00 PM"
+        },
+        {
+          "name": "Central Park",
+          "address": "New York, NY 10024",
+          "type": "attraction",
+          "mapLink": "https://maps.google.com/?q=Central+Park+NYC",
+          "distanceFromHotel": "Across the street"
+        },
+        {
+          "name": "Times Square",
+          "address": "Times Square, New York, NY 10036",
+          "type": "attraction",
+          "mapLink": "https://maps.google.com/?q=Times+Square+NYC",
+          "distanceFromHotel": "0.5 miles (10 min walk)"
+        }
+      ],
+      "weather": {
+        "location": "New York, NY",
+        "current": "68°F",
+        "condition": "Partly Cloudy",
+        "forecast": "65-72°F",
+        "humidity": "58%",
+        "windSpeed": "8 mph"
+      },
+      "itinerary": [
+        {
+          "day": "Day 1",
+          "activities": ["Arrive at JFK", "Check into Plaza", "Central Park walk"]
+        },
+        {
+          "day": "Day 2",
+          "activities": ["Statue of Liberty", "9/11 Memorial", "Broadway show"]
+        }
+      ]
+    }
+  ]
+};
