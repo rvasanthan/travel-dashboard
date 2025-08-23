@@ -2,7 +2,7 @@ const travelData = {
   "destinations": [
     {
       "id": "miami",
-      "name": "Miami Trip",
+      "name": "Miami",
       "thumbnail": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop",
       "contacts": [
         {
@@ -76,8 +76,8 @@ const travelData = {
       ]
     },
     {
-      "id": "nyc",
-      "name": "New York City",
+      "id": "key_west",
+      "name": "Key West",
       "thumbnail": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=300&h=200&fit=crop",
       "contacts": [
         {
