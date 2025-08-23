@@ -30,7 +30,7 @@ const travelData = {
       ],
       addresses: [
         {
-          name: 'Newark - Liberty International Airport',
+          name: 'Newark - Liberty International Airport (EWR)',
           address: '3 W 31st St, Newark, NJ 07102',
           bookingReference: 'ILHYRJ',
           route: 'Newark (EWR) to Fort Lauderdale (FLL)',
@@ -42,22 +42,16 @@ const travelData = {
           mapLink: 'https://maps.google.com/?q=Newark+-+Liberty+International+Airport',
         },
         {
-          name: 'Fort Lauderdale-Hollywood International Airport', 
+          name: 'Fort Lauderdale-Hollywood International Airport (FLL)', 
           address: '100 Terminal Dr, Fort Lauderdale, FL 33315',
           bookingReference: 'ILHYRJ',
-          route: 'Newark (EWR) to Fort Lauderdale (FLL)',
+          route: 'Fort Lauderdale (FLL) to Newark (EWR)',
           airline: 'Spirit Airlines · NK2121',
           departure: 'Sun 31-Aug 2:55 PM',
           Arrival: 'Sun 31-Aug 6:00 PM',
           flightTime: '3h 05m',
           type: 'airport',
           mapLink: 'https://maps.google.com/?q=Fort+Lauderdale-Hollywood+International+Airport',
-        },
-        {
-          name: 'Miami International Airport',
-          address: '2100 NW 42nd Ave, Miami, FL 33126',
-          type: 'airport',
-          mapLink: 'https://maps.google.com/?q=Miami+International+Airport',
         },
         {
             name: 'NU Car Rental',
