@@ -324,6 +324,21 @@
                                                                 🧳 <b>Booking Reference:</b> {address.bookingReference}
                                                             </p>
                                                         )}
+                                                        {address.carRentalConfirmationNumber && (
+                                                            <p className="text-sm text-gray-600 mb-2">
+                                                                🚗 <b>Car Rental Confirmation:</b> {address.carRentalConfirmationNumber}
+                                                            </p>
+                                                        )}
+                                                        {address.pickUp && (
+                                                            <p className="text-sm text-gray-600 mb-2">
+                                                                🚗 <b>Pick-up:</b> {address.pickUp}
+                                                            </p>
+                                                        )}
+                                                        {address.dropOff && (
+                                                            <p className="text-sm text-gray-600 mb-2">
+                                                                🚗 <b>Drop-off:</b> {address.dropOff}
+                                                            </p>
+                                                        )}
                                                         {address.route && (
                                                             <p className="text-sm text-gray-600 mb-2">
                                                                 ✈️ <b>Route:</b> {address.route}
@@ -381,6 +396,17 @@
                                                             >
                                                                 {React.createElement(Booking, { className: "w-3 h-3" })}
                                                                 <span className="text-sm">View Booking Confirmation</span>
+                                                            </a>
+                                                        )}
+                                                        {address.voucher && (
+                                                            <a
+                                                                href={address.voucher}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-blue-600 hover:text-blue-800 flex items-center space-x-1"
+                                                            >
+                                                                {React.createElement(Booking, { className: "w-3 h-3" })}
+                                                                <span className="text-sm">View Voucher</span>
                                                             </a>
                                                         )}
                                                     </div>

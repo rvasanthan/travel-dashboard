@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fetch = require('node-fetch');
 const cors = require('cors');
+const { off } = require('process');
 console.log('typeof fetch:', typeof fetch);
 
 const app = express();
@@ -57,8 +58,13 @@ const travelData = {
             name: 'NU Car Rental',
             address: '2900 SE 6th Ave, Fort Lauderdale, FL 33316',
             type: 'car',
+            bookingReference: '629886731',
+            carRentalConfirmationNumber: '6170066130NU',
+            pickUp: 'Wed, Aug 27 · 1:30 PM, Fort Lauderdale-Hollywood International Airport',
+            dropOff: 'Sun, Aug 31 · 1:00 PM, Fort Lauderdale-Hollywood International Airport',
             mapLink: 'https://www.google.com/maps/search/?api=1&query=2900%20SE%206th%20Ave.,%20Fort%20Lauderdale%20%20(FL),%20USA%20-%20Florida,%2033316',
-            phone: '+18003147306'
+            phone: '+18003147306',
+            voucher: 'https://res.cloudinary.com/abhinithame/image/upload/v1755974144/Saimandir/travel-companion/fll-car-rental-voucher.pdf'
         },
         {
           name: 'Hotel Belleza',
