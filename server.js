@@ -19,15 +19,26 @@ const VISUAL_CROSSING_API_KEY = process.env.VISUAL_CROSSING_API_KEY || 'NR4A6JP6
 // Travel data (you can move this to a separate JSON file)
 const travelData = {
   destinations: [
+    
     {
       id: 'miami',
       name: 'Miami',
       thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755967744/Saimandir/travel-companion/miami.jpg',
       weatherLocation: 'Miami,FL,US', // Format for Visual Crossing API
       contacts: [
-        { name: 'Hotel Concierge', phone: '+1-305-555-0123', type: 'hotel' },
-        { name: 'Car Rental', phone: '+1-305-555-0456', type: 'car' },
-        { name: 'Local Guide', phone: '+1-305-555-0789', type: 'guide' }
+        { name: 'Vasanth', phone: '+17328290350', type: 'user' },
+        { name: 'Neels', phone: '+17322539132', type: 'user' },
+        { name: 'Senthil', phone: '+14104095394', type: 'user' },
+        { name: 'Venkata', phone: '+16095823436', type: 'user' },
+        { name: 'Vasanth Dad', phone: '+17324892852', type: 'user' },
+        { name: 'Indu', phone: '+17326041711', type: 'user' },
+        { name: 'Janani', phone: '+17322539500', type: 'user' },
+        { name: 'Navaneetha', phone: '+14102929684', type: 'user' },
+        { name: 'Aishwarya', phone: '+16677861947', type: 'user' },
+        { name: 'Nithinraj', phone: '+18482443708', type: 'user' },
+        { name: 'Chinnu', phone: '+17324875810', type: 'user' },
+        { name: 'Abhi', phone: '+17328196997', type: 'user' },
+        { name: 'Ritvik', phone: '+14436802804', type: 'user' }
       ],
       addresses: [
         {
@@ -80,7 +91,7 @@ const travelData = {
     {
       id: 'keywest',
       name: 'Key West',
-      thumbnail: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=300&h=200&fit=crop',
+      thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755989723/Saimandir/travel-companion/key-west.jpg',
       weatherLocation: 'Key West,FL,US', // Format for Visual Crossing API
       contacts: [
         { name: 'Hotel Front Desk', phone: '+1-212-555-0123', type: 'hotel' },
@@ -88,17 +99,15 @@ const travelData = {
       ],
       addresses: [
         {
-          name: 'JFK International Airport',
-          address: 'Queens, NY 11430',
-          type: 'airport',
-          mapLink: 'https://maps.google.com/?q=JFK+Airport'
-        },
-        {
-          name: 'The Plaza Hotel',
-          address: '768 5th Ave, New York, NY 10019',
+          name: 'The Laureate Key West',
+          address: '3444 North Roosevelt Boulevard, Key West, FL 33040',
+          bookingReference: '6860259826, 6860259826',
           type: 'hotel',
-          mapLink: 'https://maps.google.com/?q=The+Plaza+Hotel+NYC',
-          distanceFromAirport: '17 miles'
+          checkIn: 'Thu, August 28, 2025 4PM',
+          checkOut: 'Sun, August 31, 2025 at 11:00 AM',
+          mapLink: 'https://maps.google.com/?q=The+Laureate+Key+West',
+          distanceFromAirport: '186 miles (3h 30m drive)',
+          phone: '+13052957509',
         }
       ]
     }
