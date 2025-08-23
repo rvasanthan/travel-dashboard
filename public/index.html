@@ -75,6 +75,8 @@
             const [data, setData] = useState(null);
             const [activeTab, setActiveTab] = useState(null);
             const [loading, setLoading] = useState(true);
+            const [weatherData, setWeatherData] = useState({});
+            const [weatherLoading, setWeatherLoading] = useState({});
 
             useEffect(() => {
                 fetch('/api/travel-data')
@@ -83,12 +85,44 @@
                         setData(data);
                         setActiveTab(data.destinations[0]?.id);
                         setLoading(false);
+                        
+                        // Fetch weather for all destinations
+                        data.destinations.forEach(destination => {
+                            fetchWeatherForDestination(destination.id, destination.weatherLocation);
+                        });
                     })
                     .catch(error => {
                         console.error('Error fetching data:', error);
                         setLoading(false);
                     });
             }, []);
+
+            const fetchWeatherForDestination = async (destinationId, location) => {
+                setWeatherLoading(prev => ({ ...prev, [destinationId]: true }));
+                
+                try {
+                    const response = await fetch(`/api/weather/${encodeURIComponent(location)}`);
+                    const weather = await response.json();
+                    
+                    setWeatherData(prev => ({
+                        ...prev,
+                        [destinationId]: weather
+                    }));
+                } catch (error) {
+                    console.error(`Error fetching weather for ${location}:`, error);
+                    setWeatherData(prev => ({
+                        ...prev,
+                        [destinationId]: {
+                            location: location,
+                            current: 'N/A',
+                            condition: 'Unable to fetch weather',
+                            forecast: 'N/A'
+                        }
+                    }));
+                }
+                
+                setWeatherLoading(prev => ({ ...prev, [destinationId]: false }));
+            };
 
             const getIcon = (type) => {
                 switch (type) {
@@ -119,6 +153,24 @@
             }
 
             const activeDestination = data.destinations.find(dest => dest.id === activeTab);
+            const currentWeather = weatherData[activeTab];
+            const isWeatherLoading = weatherLoading[activeTab];
+
+            const getWeatherIcon = (iconName) => {
+                // Map Visual Crossing icons to appropriate displays
+                const iconMap = {
+                    'clear-day': '☀️',
+                    'clear-night': '🌙',
+                    'partly-cloudy-day': '⛅',
+                    'partly-cloudy-night': '☁️',
+                    'cloudy': '☁️',
+                    'rain': '🌧️',
+                    'snow': '❄️',
+                    'wind': '💨',
+                    'fog': '🌫️'
+                };
+                return iconMap[iconName] || '🌤️';
+            };
 
             return (
                 <div className="min-h-screen bg-gray-50">
@@ -179,19 +231,63 @@
                                 {/* Weather Section */}
                                 <div className="lg:col-span-1">
                                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Weather</h3>
-                                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-md">
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <h3 className="text-lg font-semibold mb-1">{activeDestination.weather.location}</h3>
-                                                <p className="text-sm opacity-90">{activeDestination.weather.condition}</p>
-                                                <p className="text-xs opacity-75 mt-1">Forecast: {activeDestination.weather.forecast}</p>
-                                            </div>
-                                            <div className="text-right">
-                                                <div className="text-3xl font-bold">{activeDestination.weather.current}</div>
-                                                {React.createElement(Cloud, { className: "w-8 h-8 mt-2 ml-auto opacity-75" })}
+                                    {isWeatherLoading ? (
+                                        <div className="bg-gray-200 animate-pulse p-6 rounded-lg shadow-md">
+                                            <div className="flex items-center justify-between">
+                                                <div>
+                                                    <div className="h-5 bg-gray-300 rounded mb-2 w-32"></div>
+                                                    <div className="h-4 bg-gray-300 rounded mb-1 w-24"></div>
+                                                    <div className="h-3 bg-gray-300 rounded w-20"></div>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="h-8 bg-gray-300 rounded mb-2 w-16"></div>
+                                                    <div className="h-6 bg-gray-300 rounded w-8 ml-auto"></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    ) : currentWeather ? (
+                                        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-md">
+                                            <div className="flex items-center justify-between">
+                                                <div>
+                                                    <h3 className="text-lg font-semibold mb-1">{currentWeather.location}</h3>
+                                                    <p className="text-sm opacity-90 mb-1">{currentWeather.condition}</p>
+                                                    <p className="text-xs opacity-75 mb-2">{currentWeather.description}</p>
+                                                    <div className="text-xs opacity-75 space-y-1">
+                                                        <div>Feels like: {currentWeather.feelsLike}</div>
+                                                        <div>Humidity: {currentWeather.humidity}</div>
+                                                        <div>Wind: {currentWeather.windSpeed}</div>
+                                                        {currentWeather.uvIndex && currentWeather.uvIndex !== 'N/A' && (
+                                                            <div>UV Index: {currentWeather.uvIndex}</div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                <div className="text-right">
+                                                    <div className="text-3xl font-bold mb-1">{currentWeather.current}</div>
+                                                    <div className="text-2xl mb-2">{getWeatherIcon(currentWeather.icon)}</div>
+                                                    <div className="text-xs opacity-75">
+                                                        <div>H: {currentWeather.todayHigh}</div>
+                                                        <div>L: {currentWeather.todayLow}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Forecast for tomorrow */}
+                                            {currentWeather.tomorrowHigh && currentWeather.tomorrowHigh !== 'N/A' && (
+                                                <div className="mt-4 pt-4 border-t border-blue-400 border-opacity-30">
+                                                    <div className="flex justify-between items-center text-xs opacity-90">
+                                                        <span>Tomorrow</span>
+                                                        <span>{currentWeather.tomorrowLow} - {currentWeather.tomorrowHigh}</span>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <div className="bg-gray-500 text-white p-6 rounded-lg shadow-md">
+                                            <div className="text-center">
+                                                <h3 className="text-lg font-semibold mb-2">Weather Unavailable</h3>
+                                                <p className="text-sm opacity-90">Unable to fetch weather data</p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Contacts Section */}
