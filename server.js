@@ -30,17 +30,50 @@ const travelData = {
       ],
       addresses: [
         {
+          name: 'Newark - Liberty International Airport',
+          address: '3 W 31st St, Newark, NJ 07102',
+          bookingReference: 'ILHYRJ',
+          route: 'Newark (EWR) to Fort Lauderdale (FLL)',
+          airline: 'Spirit Airlines · NK2124',
+          departure: 'Wed 27-Aug 10:31 AM',
+          Arrival: 'Wed 27-Aug 1:35 PM',
+          flightTime: '3h 04m',
+          type: 'airport',
+          mapLink: 'https://maps.google.com/?q=Newark+-+Liberty+International+Airport',
+        },
+        {
+          name: 'Fort Lauderdale-Hollywood International Airport', 
+          address: '100 Terminal Dr, Fort Lauderdale, FL 33315',
+          bookingReference: 'ILHYRJ',
+          route: 'Newark (EWR) to Fort Lauderdale (FLL)',
+          airline: 'Spirit Airlines · NK2121',
+          departure: 'Sun 31-Aug 2:55 PM',
+          Arrival: 'Sun 31-Aug 6:00 PM',
+          flightTime: '3h 05m',
+          type: 'airport',
+          mapLink: 'https://maps.google.com/?q=Fort+Lauderdale-Hollywood+International+Airport',
+        },
+        {
           name: 'Miami International Airport',
           address: '2100 NW 42nd Ave, Miami, FL 33126',
           type: 'airport',
-          mapLink: 'https://maps.google.com/?q=Miami+International+Airport'
+          mapLink: 'https://maps.google.com/?q=Miami+International+Airport',
         },
         {
-          name: 'Hotel Beaux Arts',
-          address: '1401 Ocean Dr, Miami Beach, FL 33139',
-          type: 'hotel',
-          mapLink: 'https://maps.google.com/?q=1401+Ocean+Dr+Miami+Beach+FL',
-          distanceFromAirport: '8.5 miles'
+            name: 'NU Car Rental',
+            address: '2900 SE 6th Ave, Fort Lauderdale, FL 33316',
+            type: 'car',
+            mapLink: 'https://www.google.com/maps/search/?api=1&query=2900%20SE%206th%20Ave.,%20Fort%20Lauderdale%20%20(FL),%20USA%20-%20Florida,%2033316',
+            phone: '+18003147306'
+        },
+        {
+          name: 'Hotel Belleza',
+          address: '2115 Washington Avenue, Miami Beach, FL 33139, United States',
+          type: 'restaurant',
+          mapLink: 'https://maps.google.com/?q=2115+Washington+Avenue+Miami+Beach+FL+33319',
+          distanceFromAirport: '28 miles (45 min drive)',
+          phone: '+13057401430',
+          confirmationPage: 'https://res.cloudinary.com/abhinithame/image/upload/v1755970470/Saimandir/travel-companion/Hotel_belleza_confirmation.pdf'
         }
       ]
     },
