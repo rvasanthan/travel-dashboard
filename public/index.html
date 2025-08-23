@@ -308,7 +308,7 @@
                                     )}
                                 </div>
 
-                                {/* Addresses Section */}
+                                {activeDestination.addresses.length > 0 && (
                                 <div className="lg:col-span-1">
                                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Locations & Addresses</h3>
                                     <div className="space-y-3">
@@ -426,7 +426,7 @@
                                         ))}
                                     </div>
                                 </div>
-                                
+                            )}
 
                                 {activeDestination.contacts.length > 0 && (
                                 <div className="lg:col-span-1">
