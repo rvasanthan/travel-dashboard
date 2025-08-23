@@ -26,19 +26,6 @@ const travelData = {
       thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755967744/Saimandir/travel-companion/miami.jpg',
       weatherLocation: 'Miami,FL,US', // Format for Visual Crossing API
       contacts: [
-        { name: 'Vasanth', phone: '+17328290350', type: 'user' },
-        { name: 'Neels', phone: '+17322539132', type: 'user' },
-        { name: 'Senthil', phone: '+14104095394', type: 'user' },
-        { name: 'Venkata', phone: '+16095823436', type: 'user' },
-        { name: 'Vasanth Dad', phone: '+17324892852', type: 'user' },
-        { name: 'Indu', phone: '+17326041711', type: 'user' },
-        { name: 'Janani', phone: '+17322539500', type: 'user' },
-        { name: 'Navaneetha', phone: '+14102929684', type: 'user' },
-        { name: 'Aishwarya', phone: '+16677861947', type: 'user' },
-        { name: 'Nithinraj', phone: '+18482443708', type: 'user' },
-        { name: 'Chinnu', phone: '+17324875810', type: 'user' },
-        { name: 'Abhi', phone: '+17328196997', type: 'user' },
-        { name: 'Ritvik', phone: '+14436802804', type: 'user' }
       ],
       addresses: [
         {
@@ -110,6 +97,28 @@ const travelData = {
           phone: '+13052957509',
         }
       ]
+    },
+    {
+      id: 'contacts',
+      name: 'Important Contacts',
+      thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755967744/Saimandir/travel-companion/miami.jpg',
+      weatherLocation: 'Key West,FL,US', // Format for Visual Crossing API
+      contacts: [
+        { name: 'Vasanth', phone: '+17328290350', type: 'user' },
+        { name: 'Neels', phone: '+17322539132', type: 'user' },
+        { name: 'Senthil', phone: '+14104095394', type: 'user' },
+        { name: 'Venkata', phone: '+16095823436', type: 'user' },
+        { name: 'Vasanth Dad', phone: '+17324892852', type: 'user' },
+        { name: 'Indu', phone: '+17326041711', type: 'user' },
+        { name: 'Janani', phone: '+17322539500', type: 'user' },
+        { name: 'Navaneetha', phone: '+14102929684', type: 'user' },
+        { name: 'Aishwarya', phone: '+16677861947', type: 'user' },
+        { name: 'Nithinraj', phone: '+18482443708', type: 'user' },
+        { name: 'Chinnu', phone: '+17324875810', type: 'user' },
+        { name: 'Abhi', phone: '+17328196997', type: 'user' },
+        { name: 'Ritvik', phone: '+14436802804', type: 'user' }
+      ],
+      addresses: []
     }
   ]
 };
