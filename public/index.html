@@ -83,6 +83,18 @@
             </svg>
         );
 
+        const Beach = ({ className }) => (
+            <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21h18M4 17c1.5-4 10.5-4 12 0M8 17c0-2 4-2 4 0M12 3v4m0 0c-2.5 0-4.5 2-4.5 4.5S9.5 16 12 16s4.5-2 4.5-4.5S14.5 7 12 7z" />
+            </svg>
+        );
+        
+        const Restaurant = ({ className }) => (
+            <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M7 6v12m10-12v12" />
+            </svg>
+        );
+
         const TravelDashboard = () => {
             const [data, setData] = useState(null);
             const [activeTab, setActiveTab] = useState(null);
@@ -147,6 +159,7 @@
                         </svg>
                     );
                     case 'user': return React.createElement(User, { className: "w-4 h-4" });
+                    case 'beach': return React.createElement(Beach, { className: "w-4 h-4" });
                     default: return React.createElement(MapPin, { className: "w-4 h-4" });
                 }
             };
@@ -427,6 +440,75 @@
                                     </div>
                                 </div>
                             )}
+
+                            {activeDestination.locations.length > 0 && (
+                                <div className="lg:col-span-1">
+                                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Food & Attractions</h3>
+                                    <div className="space-y-3">
+                                        {activeDestination.locations.map((address, index) => (
+                                            <div key={index} className="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                                                <div className="flex items-start space-x-3">
+                                                    {getIcon(address.type)}
+                                                    <div className="flex-1">
+                                                        <h3 className="font-semibold text-gray-900 mb-1">{address.name}</h3>
+                                                        <p className="text-sm text-gray-600 mb-2">{address.address}</p>
+                                                        {address.timings && (
+                                                            <p className="text-sm text-gray-600 mb-2">
+                                                                <b>Timings:</b> {address.timings}
+                                                            </p>
+                                                        )}
+                                                        {address.googleRating && (
+                                                            <p className="text-sm text-gray-600 mb-2">
+                                                                <b>Google Rating:</b> {address.googleRating}
+                                                            </p>
+                                                        )}
+                                                        {address.phone && (
+                                                            <p className="text-sm text-gray-600 mb-2">
+                                                                <b>Phone:</b> {address.phone}
+                                                            </p>
+                                                        )}                                                      
+                                                        {address.distanceFromHotel && (
+                                                            <p className="text-xs text-blue-600 mb-2">
+                                                                <b>{address.distanceFromHotel}</b> from Hotel
+                                                            </p>
+                                                        )}
+                                                        <a
+                                                            href={address.mapLink}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm"
+                                                        >
+                                                            {React.createElement(MapPin, { className: "w-3 h-3" })}
+                                                            <span>View on Maps</span>
+                                                        </a>
+                                                        {address.phone && (
+                                                            <a 
+                                                            href={'tel:' + address.phone}
+                                                            className="text-blue-600 hover:text-blue-800 flex items-center space-x-1"
+                                                            >
+                                                            {React.createElement(Phone, { className: "w-3 h-3" })}
+                                                            <span className="text-sm">{address.phone}</span>
+                                                        </a>
+                                                        )}
+                                                        {address.menuLink && (
+                                                            <a
+                                                                href={address.confirmationPage}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="text-blue-600 hover:text-blue-800 flex items-center space-x-1"
+                                                            >
+                                                                {React.createElement(Booking, { className: "w-3 h-3" })}
+                                                                <span className="text-sm">Check Menu</span>
+                                                            </a>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
 
                                 {activeDestination.contacts.length > 0 && (
                                 <div className="lg:col-span-1">
