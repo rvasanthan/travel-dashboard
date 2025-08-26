@@ -138,8 +138,9 @@ const travelData = {
       thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755989723/Saimandir/travel-companion/key-west.jpg',
       weatherLocation: 'Key West,FL,US', // Format for Visual Crossing API
       contacts: [
-        { name: 'Hotel Front Desk', phone: '+1-212-555-0123', type: 'hotel' },
-        { name: 'Yellow Cab Co.', phone: '+1-212-555-0456', type: 'transport' }
+      ],
+      locations: [
+
       ],
       addresses: [
         {
