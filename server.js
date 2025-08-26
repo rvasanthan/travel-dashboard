@@ -166,6 +166,17 @@ const travelData = {
           mapLink: 'https://maps.google.com/?q=The+Laureate+Key+West',
           distanceFromAirport: '186 miles (3h 30m drive)',
           phone: '+13052957509',
+        },
+        {
+          name: 'Courtyard by Marriott Key West Waterfront',
+          address: '3031-41 N Roosevelt Blvd, Key West, FL 33040',
+          bookingReference: '881249938',
+          type: 'hotel',
+          checkIn: 'Fri, August 28, 2025 4PM',
+          checkOut: 'Sun, August 31, 2025 at 11:00 AM',
+          mapLink: 'https://maps.google.com/?q=Courtyard+by+Marriott+Key+West+Waterfront',
+          distanceFromAirport: '158 miles (3h 20m drive)',
+          phone: '+3052966595',
         }
       ]
     },
