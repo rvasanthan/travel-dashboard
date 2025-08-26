@@ -148,6 +148,13 @@ const travelData = {
           distanceFromHotel: '69 miles (1hrs 23min from Miami), 99 Miles (2 hr 12 mins to Key West)',
         },
         {
+          name: 'Key Largo Princess - Glass Bottom boat tour',
+          address: '99701 Overseas Hwy, Key Largo, FL 33037',
+          type: 'beach',
+          mapLink: 'https://maps.google.com/maps/dir//102601+Overseas+Hwy+Key+Largo,+FL+33037/@25.1248675,-80.4057292,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x88d768f9ecf8909b:0x30edd313b847a00c',
+          distanceFromHotel: '72 miles (1hrs 24min from Miami), 96 Miles (2 hr 6 mins to Key West)',
+        },
+        {
           name: 'Sombrero Beach',
           address: 'Sombrero Beach Rd, Marathon, FL 33050',
           type: 'beach',
@@ -160,6 +167,13 @@ const travelData = {
           type: 'attraction',
           mapLink: 'https://maps.google.com/?q=7+Mile+Bridge+-+Vista+Point',
           distanceFromHotel: '43,5 Miles (55 mins from Key West)',
+        },
+        {
+          name: 'Southern most point of USA',
+          address: '1400 Whitehead St, Key West, FL 33040',
+          type: 'attraction',
+          mapLink: 'https://maps.google.com/?q=Southern+most+point+of+USA',
+          distanceFromHotel: '3.5 Miles (12 mins drive from Hotel)',
         },
       ],
       addresses: [
