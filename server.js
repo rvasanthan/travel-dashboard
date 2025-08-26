@@ -140,7 +140,20 @@ const travelData = {
       contacts: [
       ],
       locations: [
-
+        {
+          name: 'Sombrero Beach',
+          address: 'Sombrero Beach Rd, Marathon, FL 33050',
+          type: 'beach',
+          mapLink: 'https://maps.app.goo.gl/fWRTn3T7cmSofHhA9',
+          distanceFromHotel: '123 miles (2hrs 34min from Miami), 48 Miles (1 hr 5 mins from Key West)',
+        },
+        {
+          name: '7 Mile Bridge - Vista Point',
+          address: 'Marathon, FL 33050',
+          type: 'attraction',
+          mapLink: 'https://maps.google.com/?q=7+Mile+Bridge+-+Vista+Point',
+          distanceFromHotel: '43,5 Miles (55 mins from Key West)',
+        },
       ],
       addresses: [
         {
