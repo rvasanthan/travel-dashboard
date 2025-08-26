@@ -185,6 +185,7 @@ const travelData = {
       name: 'Important Contacts',
       thumbnail: 'https://res.cloudinary.com/abhinithame/image/upload/v1755967744/Saimandir/travel-companion/miami.jpg',
       weatherLocation: 'Key West,FL,US', // Format for Visual Crossing API
+      locations: [],
       contacts: [
         { name: 'Vasanth', phone: '+17328290350', type: 'user' },
         { name: 'Neels', phone: '+17322539132', type: 'user' },
